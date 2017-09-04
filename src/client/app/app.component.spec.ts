@@ -15,6 +15,7 @@ import { Angulartics2GoogleAnalytics, Angulartics2Module } from 'angulartics2'
 import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { NavbarService } from './shared/navbar/navbar.service'
 import { MdCardModule } from '@angular/material'
+import { ModalModule } from 'ngx-bootstrap'
 import '../operators'
 
 const TESTING_CONFIG: EnvConfig = {
@@ -45,7 +46,8 @@ describe('App component', () => {
         HttpClientTestingModule,
         RouterTestingModule.withRoutes(config),
         Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ]),
-        MdCardModule
+        MdCardModule,
+        ModalModule.forRoot()
       ],
       declarations: [TestComponent, NavbarComponent, AppComponent,
         HomeComponent, AboutComponent, SearchComponent],
