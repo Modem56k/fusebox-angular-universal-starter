@@ -26,6 +26,15 @@ export const BUILD_CONFIG: BuildConfiguration = {
       }
     },
     {
+      order: 1,
+      inHead: true,
+      element: 'link',
+      attributes: {
+        rel: 'stylesheet',
+        href: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
+      }
+    },
+    {
       order: 2,
       inHead: true,
       element: 'meta',

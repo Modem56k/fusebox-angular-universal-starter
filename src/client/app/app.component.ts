@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { ChangeDetectionStrategy, Component, TemplateRef } from '@angular/core'
 import { Meta } from '@angular/platform-browser'
 import { EnvironmentService } from './shared/services/environment.service'
 import { Angulartics2GoogleAnalytics } from 'angulartics2'
+import { BsModalRef, BsModalService } from 'ngx-bootstrap'
 
 @Component({
   selector: 'pm-app',
@@ -10,7 +11,14 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2'
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-  constructor(env: EnvironmentService, meta: Meta, analytics: Angulartics2GoogleAnalytics) {
+  public modalRef: BsModalRef
+
+  constructor(env: EnvironmentService, meta: Meta, analytics: Angulartics2GoogleAnalytics,
+    private modalService: BsModalService) {
     meta.addTag({ property: 'fb:app_id', content: env.config.og.facebookAppId })
+  }
+
+  public openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template)
   }
 }

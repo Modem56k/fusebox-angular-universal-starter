@@ -12,6 +12,7 @@ import { PlatformService } from './shared/services/platform.service'
 import { HttpApiConfigInterceptor } from './shared/services/http-api-config-interceptor.service'
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { GlobalErrorHandler } from './shared/services/error-handler.service'
+import { AlertModule, ModalModule } from 'ngx-bootstrap'
 
 export function removeStyleTags(document: HTMLDocument, ps: PlatformService): any {
   // tslint:disable-next-line:only-arrow-functions
@@ -57,7 +58,9 @@ export function metaFactory(environmentService: EnvironmentService): MetaLoader 
       provide: MetaLoader,
       useFactory: (metaFactory),
       deps: [EnvironmentService]
-    })
+    }),
+    AlertModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [
     { provide: ErrorHandler, useClass: GlobalErrorHandler },
