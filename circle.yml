@@ -34,7 +34,7 @@ deployment:
             password $HEROKU_TOKEN
           EOF
         - chmod 600 ~/.netrc # Heroku cli complains about permissions without this
-        - git push git@heroku.com:fusebox-angular-universal-star.git $CIRCLE_SHA1:refs/heads/master
+        - git clone $CIRCLE_SHA1:refs/heads/master
     branch: tester
     heroku:
       appname: fusebox-angular-universal-star
