@@ -1,11 +1,25 @@
-<nav>
+<nav class="mat-elevation-z6">
   <a class="nav-button" md-button routerLink>FUSEBOX-ANGULAR-UNIVERSAL-STARTER</a>
   <div class="flex-spacer"></div>
-  <a class="nav-button" md-button *ngFor="let item of navbarService.menu$ | async" [routerLink]="item.route" routerLinkActive="active"
-    [routerLinkActiveOptions]="{exact: true}">
+
+
+  <button md-button [mdMenuTriggerFor]="pages">Pages</button>
+
+  <md-menu #pages="mdMenu">
+    <button md-menu-item [mdMenuTriggerFor]="standard">Standard</button>
+    <button md-menu-item [mdMenuTriggerFor]="seo">SEO</button>
+  </md-menu>
+
+  <md-menu #standard="mdMenu">
+    <a mat-menu-item *ngFor="let item of navbarService.menu$ | async" [routerLink]="item.route" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
       {{ item.name }}
     </a>
+  </md-menu>
+
+  <md-menu #seo="mdMenu">
+    <a mat-menu-item href="/sitemap.xml">sitemap.xml</a>
+    <a mat-menu-item href="/robots.txt">robots.txt</a>
+  </md-menu>
+
   <a class="nav-button" md-button href="/api-docs">API</a>
-  <a class="nav-button" md-button href="/sitemap.xml">Sitemap</a>
-  <a class="nav-button" md-button href="/robots.txt">Robots</a>
 </nav>

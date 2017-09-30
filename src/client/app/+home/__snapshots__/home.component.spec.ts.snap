@@ -2,23 +2,21 @@
 
 exports[`HomeComponent should compile 1`] = `
 <pm-home>
-  <md-card
-    class="mat-card"
-  >
+  <header>
     
     
     <h1
-      class="display-3"
+      class="mat-h1"
     >
-      Hello, Angular Developer!
+      FuseBox Angular Universal Starter
     </h1>
     
     
-    <p
+    <h2
       class="lead"
     >
-      Welcome to a blazing fast Angular Universal development starter
-    </p>
+      A blazing fast Angular Universal development framework
+    </h2>
     
     
     <a
@@ -33,7 +31,11 @@ exports[`HomeComponent should compile 1`] = `
       <span
         class="mat-button-wrapper"
       >
-        View Github Repo
+        <md-icon
+          aria-hidden="true"
+          class="fa fa-github"
+        />
+         Github
       </span>
       <div
         class="mat-button-ripple mat-ripple"
@@ -44,57 +46,55 @@ exports[`HomeComponent should compile 1`] = `
       />
     </a>
     
-    
-    <md-tab-group
-      class="mat-tab-group mat-primary"
-    >
-      <mat-tab-header
-        class="mat-tab-header"
-      >
-        <div
-          aria-hidden="true"
-          class="mat-tab-header-pagination mat-tab-header-pagination-before mat-elevation-z4 mat-ripple"
-          mat-ripple=""
-        >
-          <div
-            class="mat-tab-header-pagination-chevron"
-          />
-        </div>
-        <div
-          class="mat-tab-label-container"
-        >
-          <div
-            class="mat-tab-list"
-            role="tablist"
-          >
-            <div
-              class="mat-tab-labels"
-            >
-              
-            </div>
-            <mat-ink-bar
-              class="mat-ink-bar"
-            />
-          </div>
-        </div>
-        <div
-          aria-hidden="true"
-          class="mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple"
-          mat-ripple=""
-        >
-          <div
-            class="mat-tab-header-pagination-chevron"
-          />
-        </div>
-      </mat-tab-header>
-      <div
-        class="mat-tab-body-wrapper"
-      >
-        
-      </div>
-    </md-tab-group>
-    
   
-  </md-card>
+  </header>
+  <md-tab-group
+    class="mat-tab-group mat-primary"
+  >
+    <mat-tab-header
+      class="mat-tab-header"
+    >
+      <div
+        aria-hidden="true"
+        class="mat-tab-header-pagination mat-tab-header-pagination-before mat-elevation-z4 mat-ripple"
+        mat-ripple=""
+      >
+        <div
+          class="mat-tab-header-pagination-chevron"
+        />
+      </div>
+      <div
+        class="mat-tab-label-container"
+      >
+        <div
+          class="mat-tab-list"
+          role="tablist"
+        >
+          <div
+            class="mat-tab-labels"
+          >
+            
+          </div>
+          <mat-ink-bar
+            class="mat-ink-bar"
+          />
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        class="mat-tab-header-pagination mat-tab-header-pagination-after mat-elevation-z4 mat-ripple"
+        mat-ripple=""
+      >
+        <div
+          class="mat-tab-header-pagination-chevron"
+        />
+      </div>
+    </mat-tab-header>
+    <div
+      class="mat-tab-body-wrapper"
+    >
+      
+    </div>
+  </md-tab-group>
 </pm-home>
 `;
