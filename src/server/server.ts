@@ -89,6 +89,7 @@ app.use('/css', express.static('dist/css', staticOptions))
 app.use('/js', express.static('dist/js', staticOptions))
 app.use('/ngsw.json', express.static('dist/ngsw.json', staticOptions))
 app.use('/robots.txt', express.static('dist/web/robots.txt', staticOptions))
+app.use('/manifest.json', express.static('dist/manifest.json', staticOptions))
 app.use('/assets', express.static('dist/assets', { ...staticOptions, fallthrough: false }))
 app.use('/changelog.md', express.static('dist/web/changelog.md', { ...staticOptions, fallthrough: false }))
 app.get('/sitemap.xml', (req: express.Request, res: express.Response) => {
