@@ -8,9 +8,9 @@ import { AppComponent } from './../client/app/app.component'
 import { EnvConfig } from '../../tools/config/app.config'
 import { AppModule, REQ_KEY } from './../client/app/app.module'
 import { ReplaySubject } from 'rxjs/ReplaySubject'
-import { AngularFireDatabase } from 'angularfire2/database'
-import { FIREBASE_ADMIN_INSTANCE, FirebaseAdminService } from './server.angular-fire.service'
-import { fbAdmin } from './server'
+// import { AngularFireDatabase } from 'angularfire2/database'
+import { FirebaseAdminService } from './server.angular-fire.service'
+// import { fbAdmin } from './server'
 import { MinifierService } from '../client/app/shared/services/minifier.service'
 import * as express from 'express'
 import * as cleanCss from 'clean-css'
@@ -41,7 +41,7 @@ export function createAngularFireServer(req: express.Request, transferState: Tra
 }
 
 export function getFirebaseAdmin() {
-  return fbAdmin
+  return {}
 }
 
 export function getFirebaseServerModule(d: any, zone: NgZone, ts: TransferState) {
@@ -73,15 +73,15 @@ export function getFirebaseServerModule(d: any, zone: NgZone, ts: TransferState)
         TransferState
       ]
     },
-    {
-      provide: FIREBASE_ADMIN_INSTANCE,
-      useFactory: getFirebaseAdmin
-    },
-    {
-      provide: AngularFireDatabase,
-      useFactory: getFirebaseServerModule,
-      deps: [FIREBASE_ADMIN_INSTANCE, NgZone, TransferState]
-    },
+    // {
+    //   provide: FIREBASE_ADMIN_INSTANCE,
+    //   useFactory: getFirebaseAdmin
+    // },
+    // {
+    //   provide: AngularFireDatabase,
+    //   useFactory: getFirebaseServerModule,
+    //   deps: [FIREBASE_ADMIN_INSTANCE, NgZone, TransferState]
+    // },
     {
       provide: MinifierService,
       useValue: {

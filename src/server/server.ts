@@ -5,7 +5,7 @@ import 'zone.js/dist/long-stack-trace-zone'
 import * as express from 'express'
 import * as favicon from 'serve-favicon'
 import * as cookieParser from 'cookie-parser'
-import * as admin from 'firebase-admin'
+// import * as admin from 'firebase-admin'
 import { createLogger } from '@expo/bunyan'
 import { ngExpressEngine } from '@nguniversal/express-engine'
 import { AppServerModule } from './server.angular.module'
@@ -14,8 +14,8 @@ import { exists, existsSync } from 'fs'
 import { argv } from 'yargs'
 import { useApi } from './api'
 import { join, resolve } from 'path'
-import { dbSeed } from './data/index'
-import { ANGULAR_APP_CONFIG, FB_SERVICE_ACCOUNT_CONFIG } from './server.config'
+// import { dbSeed } from './data/index'
+// import { ANGULAR_APP_CONFIG, FB_SERVICE_ACCOUNT_CONFIG } from './server.config'
 import http = require('http')
 import ms = require('ms')
 
@@ -116,17 +116,18 @@ app.get('**', (req: express.Request, res: express.Response, next: express.NextFu
   })
 })
 
-export const fbAdmin = admin.initializeApp({
-  credential: admin.credential.cert(FB_SERVICE_ACCOUNT_CONFIG),
-  databaseURL: ANGULAR_APP_CONFIG.firebase.config.databaseURL
-})
+// export const fbAdmin = admin.initializeApp({
+//   credential: admin.credential.cert(FB_SERVICE_ACCOUNT_CONFIG),
+//   databaseURL: ANGULAR_APP_CONFIG.firebase.config.databaseURL
+// })
 
 const serve = () => {
   server.listen(port, () => {
     logger.info(`Angular Universal Server listening at ${host}:${port}`)
   })
 }
+serve()
 // serve()
-dbSeed(fbAdmin.database())
-  .take(1)
-  .subscribe(res => serve(), console.error)
+// dbSeed(fbAdmin.database())
+//   .take(1)
+//   .subscribe(res => serve(), console.error)
